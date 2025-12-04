@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <math.h>
-
+//ASCII Graph for the charging and discharging 
 #define MAX_POINTS 30   // number of time steps
 #define GRAPH_HEIGHT 10 // rows in graph
 #define GRAPH_WIDTH 40  // columns in graph
@@ -629,9 +629,81 @@ void Power_to_dB(void) {
     printf("Power ratio in dB: %.2f dB\n", dB);
 }
 void menu_item_5(void) { //Basic circuit theory help 
-    void Basic_circuit_theory(void);
-    
+     Basic_circuit_theory();
 }
+//Submenu 
+void Basic_circuit_theory(){
+    int choice;
+    printf("=====Circuit theory helper=====\n");
+    printf("1.Commonly asked questions for RC circuits\n");
+    printf("2.Commonly asked theorems\n");
+    printf("3.Commonly asked power and energy questions\n");
+    printf("4.A generic quiz to test your knowledge\n");
+    printf("5.Back to main menu\n");
+    printf("Select: ");
+    scanf("%d", &choice);
+    switch(choice){
+        case 1: 
+        RC_circuit();
+        break;
+        case 2:
+        Theorems();
+        break;
+        case 3:
+        Power_Energy();
+        break;
+        case 4:
+        Quiz();
+        break;
+        default:
+        return;
+    }
+}
+void RC_circuit(){
+    FILE *file = fopen("rcquestions.txt", "r");
+    if (!file) {
+        printf("Could not open file\n");
+        return;
+    }
+    char line[1000]; // buffer for each line
+    printf("\n===== RC Circuit Questions =====\n\n");
+
+    while (fgets(line, sizeof(line), file)) {
+        printf("%s", line);
+    }
+
+    fclose(file);
+}
+void Theorems(){
+    FILE *file = fopen("Theorems.txt", "r");
+    if (!file) {
+        printf("Could not open file\n");
+        return;
+    }
+    char line[1000]; // buffer for each line
+    printf("\n===== commonly asked theorems =====\n");
+
+    while (fgets(line, sizeof(line), file)) {
+        printf("%s", line);
+    }
+    fclose(file);
+}
+void Power_Energy(){
+    FILE *file = fopen("Power_Energy.txt", "r");
+    if (!file) {
+        printf("Could not open file\n");
+        return;
+    }
+    char line[1000]; // buffer for each line
+    printf("\n=====Commonly asked power and energy questions=====\n");
+
+    while (fgets(line, sizeof(line), file)) {
+        printf("%s", line);
+    }
+    fclose(file);
+}
+// Quiz to test your knowledge
+
 
 
 

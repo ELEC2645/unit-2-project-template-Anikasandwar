@@ -1,0 +1,48 @@
+Question 1: What is an RC circuit and where is it used mainly?
+
+Answer 1: An RC circuit is a simple electrical circuit that uses a resistor and a
+capacitor. It is used to control how an electrical signal behaves over time. The
+resistor slows down the flow of current while the capacitor stores and releases
+charge. Together they determine how quickly the circuit responds, based on the
+time constant (τ = R × C). RC circuits are commonly used in practical
+electronics, such as filtering audio signals, creating time delays in timer circuits,
+smoothing out power supply voltage, debouncing mechanical switches, and
+conditioning signals from sensors.
+
+Question 2: Explain the charging and discharging process in detail.
+
+Answer 2: Charging: When a capacitor in an RC circuit begins charging, it starts
+from zero volts. As soon as the voltage source is connected, current flows through
+the resistor and into the capacitor. At the very beginning, the capacitor behaves
+almost like a short circuit because it has no stored charge, so the current is at its
+maximum. As the capacitor fills with charge, its voltage gradually increases, and
+the difference between the supply voltage and the capacitor voltage becomes
+smaller. The current flowing through the resistor decreases over time. The
+charging process follows an exponential curve: the capacitor charges quickly at
+first and then more slowly as it approaches the supply voltage. After one time
+constant (τ = R × C), the capacitor reaches about 63% of the supply voltage, and
+after around five time constants, it is considered fully charged.
+
+Discharging: When a capacitor in an RC circuit begins discharging, it starts with
+stored energy and a voltage across its plates. Once the circuit is switched to allow
+discharge, the capacitor releases its stored charge through the resistor. At the
+beginning of the discharge, the current is at its highest because the voltage across
+the capacitor is still large. As the capacitor loses charge, its voltage gradually
+drops. The current through the resistor also decreases over time. Like charging,
+the discharge process follows an exponential curve: it happens quickly at first and
+then slows down as the capacitor approaches zero volts. After one time constant
+(τ = R × C), the voltage drops to about 37% of its original value, and after about
+five time constants, the capacitor is considered fully discharged.
+
+Question 3: What is time constant and how does the capacitor act differently at t=0
+and at a steady state?
+
+Answer 3: The time constant, τ, is a measure of how quickly an RC circuit charges
+or discharges. It is calculated as the product of resistance and capacitance (τ = R ×
+C). It tells us how long it takes for the capacitor’s voltage to reach about 63% of
+its final value during charging, or to drop to about 37% of its initial value during
+discharging. At t = 0, the capacitor has no stored charge, so it behaves like a
+short circuit—allowing maximum current to flow through the resistor. At steady
+state (after about five time constants), the capacitor becomes fully charged and
+behaves like an open circuit, meaning no current flows through it and the voltage
+across the capacitor reaches the supply voltage.

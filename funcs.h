@@ -32,4 +32,10 @@ void Charging_simulation(void);
 void RC_circuit_analyser(void);
 void Discharging_simulation(void);
 void Graph_visuals(void);
+//Circuit theory helper 
+void Basic_circuit_theory(void);
+void RC_circuit(void);
+void Theorems(void);
+void Power_Energy(void);
+//void Quiz(void);
 #endif

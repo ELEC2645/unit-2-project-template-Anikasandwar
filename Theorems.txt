@@ -1,0 +1,36 @@
+Question 1: What is Kirchhoff’s Current Law (KCL) and Voltage Law (KVL)?
+
+Answer 1: Kirchhoff’s Current Law (KCL) states that the sum of currents entering a
+node (or junction) in an electrical circuit is equal to the sum of currents leaving
+that node. In other words, total current flowing into a junction equals total
+current flowing out, which is a consequence of the conservation of electric charge.
+
+Kirchhoff’s Voltage Law (KVL) states that the sum of all voltages around any
+closed loop in a circuit is zero. This is because voltage is a measure of energy per
+charge, and energy gained and lost around a complete loop must balance out.
+KVL ensures the conservation of energy in electrical circuits.
+
+Question 2: What is Thevenin’s Theorem? How do you find Thevenin equivalent?
+
+Answer 2: Thevenin’s Theorem states that any linear electrical network with
+resistors and sources can be replaced by a single voltage source (Vth) in series
+with a single resistor (Rth) connected to the load. This simplifies complex
+circuits into an easier-to-analyze equivalent.
+
+To find the Thevenin equivalent:
+1. Remove the load resistor from the circuit.
+2. Calculate the open-circuit voltage across the terminals where the load was
+   connected. This is Vth.
+3. Turn off all independent voltage sources (replace with short circuits) and
+   current sources (replace with open circuits), then calculate the equivalent
+   resistance seen from the terminals. This is Rth.
+4. The Thevenin equivalent circuit is a voltage source Vth in series with Rth.
+
+Question 3: What is the superposition theorem?
+
+Answer 3: The superposition theorem states that in a linear circuit with multiple
+independent sources, the voltage or current at any element is the algebraic sum
+of the contributions from each independent source acting alone, while all other
+independent sources are turned off (voltage sources shorted, current sources
+opened). This allows complex circuits with multiple sources to be analyzed
+one source at a time, making calculations simpler.

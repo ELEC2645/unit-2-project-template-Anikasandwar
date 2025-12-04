@@ -1,0 +1,34 @@
+Question 1: What is the definition of power (P = VI) in DC and AC circuits?
+
+Answer 1: In DC circuits, power (P) is the product of voltage (V) and current (I):
+P = V × I. It represents the rate at which electrical energy is consumed or
+delivered by a circuit element.
+
+In AC circuits, power depends on both voltage and current and their phase
+relationship. Instantaneous power varies with time, but the average power over
+a cycle is given by P = Vrms × Irms × cos(φ), where φ is the phase difference
+between voltage and current, and cos(φ) is called the power factor.
+
+Question 2: What is real, reactive, and apparent power?
+
+Answer 2: Real power (P) is the actual power consumed by a load to perform
+useful work, measured in watts (W). It represents energy converted into work
+or heat.
+
+Reactive power (Q) is the power stored and released by reactive components
+(inductors and capacitors) in the circuit. It does no real work but causes
+current to oscillate, measured in volt-amperes reactive (VAR).
+
+Apparent power (S) is the combination of real and reactive power, given by
+S = √(P² + Q²), measured in volt-amperes (VA). It represents the total
+power supplied by the source.
+
+Question 3: What is power factor and why is it important?
+
+Answer 3: Power factor (PF) is the ratio of real power to apparent power:
+PF = P / S = cos(φ). It indicates how effectively the electrical power is
+being converted into useful work. A high power factor (close to 1) means
+efficient use of electrical power, while a low power factor leads to wasted
+energy and higher current in the system, requiring larger wires and
+increased losses. Improving power factor reduces energy costs and improves
+system efficiency.

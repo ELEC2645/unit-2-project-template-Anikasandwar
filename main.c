@@ -89,7 +89,7 @@ static void select_menu_item(int input)
             break;
 
         case 5:
-            //menu_item_5();
+            menu_item_5();
             go_back_to_main();
             break;
 
