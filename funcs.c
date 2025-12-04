@@ -296,6 +296,7 @@ void RC_circuit_analyser(void){
     printf("1.Charging simulation\n");
     printf("2.Discharging simulation\n");
     printf("3.Visual of the recent graphs generated on Excel\n");
+    printf("4.Back to Main menu\n");
     printf("Select: ");
     scanf("%d", &choice);
     switch(choice){
@@ -653,7 +654,7 @@ void Basic_circuit_theory(){
         Power_Energy();
         break;
         case 4:
-        Quiz();
+        //Quiz();
         break;
         default:
         return;
