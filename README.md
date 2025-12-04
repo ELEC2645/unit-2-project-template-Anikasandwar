@@ -12,7 +12,7 @@ The code has separated the menu handling code in `main.c` and the function imple
 ### 1 Run code
 
 You can build the code as we have been using in the labs with 
-`gcc main.c funcs.c -o main.out -lm` (the `-lm` is required to link the math library). You can also use `make -B` to force a rebuild using the provided `Makefile`.
+`/` (the gcc main.c funcs.c -o main.out -lm)`-lm` is required to link the math library). You can also use `make -B` to force a rebuild using the provided `Makefile`.
 
 Then run the code with `./main.out`
 

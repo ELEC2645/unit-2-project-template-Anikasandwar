@@ -1,0 +1,4 @@
+V=IR: Voltage is calculated by multiplying Current and Resistance 
+I=V/R: Current is calculated by dividing Voltage and Resistance 
+P=VI: Power is calculated by multiplying Voltage and Current 
+
