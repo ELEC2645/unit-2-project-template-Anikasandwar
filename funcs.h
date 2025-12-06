@@ -37,5 +37,5 @@ void Basic_circuit_theory(void);
 void RC_circuit(void);
 void Theorems(void);
 void Power_Energy(void);
-//void Quiz(void);
+void Quiz(void);
 #endif

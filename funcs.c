@@ -8,6 +8,7 @@
 #define GRAPH_HEIGHT 10 // rows in graph
 #define GRAPH_WIDTH 40  // columns in graph
 
+
 void menu_item_1(void){
     resistor_network_menu();
 }
@@ -654,7 +655,7 @@ void Basic_circuit_theory(){
         Power_Energy();
         break;
         case 4:
-        //Quiz();
+        Quiz();
         break;
         default:
         return;
@@ -704,10 +705,110 @@ void Power_Energy(){
     fclose(file);
 }
 // Quiz to test your knowledge 
+struct Question{
+    char question[400];
+    char total_options[4][200]; // user has 4 options to pick from
+    int correct_option;
+};
+// total 5 questions questions 
+struct Question quiz[] = {
+    { 
+        "What is the impedance of a capacitor?",
+        { "1/jwC", "jwC", "R", "None" },
+        1
+    },
+    {   
+         "In an RC charging circuit, the voltage across the capacitor is given by:",
+        { "V(1 - e^(-t/RC))",
+          "V e^(-t/RC)",
+          "Vt / RC",
+          "(V/RC) e^(-t/RC)" },
+        1
+    },
+    {   
+        "The time constant of an RC circuit represents:",
+        { "The time to fully charge the capacitor",
+          "The time to charge to 50% of the supply voltage",
+          "The time to reach about 63% of the final voltage",
+          "The time to discharge completely" },
+        3
+    },
+    {   
+        "A 10 Ω resistor and 5 Ω resistor are connected in series across a 30 V supply.\nWhat is the voltage across the 10 Ω resistor?",
+        { "5 V", "10 V", "15 V", "20 V" },
+        3
+    },
+    {  
+        "Power in an electrical circuit is given by which expression?",
+        { "P = VI", "P = V/I", "P = I/R", "P = VR" },
+        1
+    },
+    {   
+        "A capacitor of 20 µF is charged through a 2 kΩ resistor. What is the time constant?",
+        { "0.01 s", "0.04 s", "0.2 s", "0.4 s" },
+        2
+    }
+};
+void Quiz(void){
+    int score = 0; // initialize 
+    int answer;
+    printf("====Circuit theory quiz! Test your knowledge=====\n");
+    int i = 0;
+    int total_questions = 5;
 
+    while (i < (sizeof(quiz)/sizeof(quiz[0]))) {
+        // print question
+        printf("\nQ%d) %s\n", i + 1, quiz[i].question);
+        // print all 4 options 
+        int j=0;
+        while(j<4){
+            printf("%d) %s\n",j+1,quiz[i].total_options[j]);
+            j++;
+        }
+        //ask the user for the input 
+        answer = 0; // initialize 
+        while (answer < 1 || answer > 4) { // error handling
+            printf("Answer (1-4): ");
+            scanf("%d", &answer);  
 
-
-
-
-
-
+            if (answer < 1 || answer > 4) {
+                printf("Invalid! Pick 1, 2, 3, or 4.\n");
+            }
+        }
+        //check if correct 
+        if (answer == quiz[i].correct_option){
+            printf("correct answer!\n");
+            score++;
+        }
+        else{
+            printf("Wrong! the correct answer was: %d\n", quiz[i].correct_option);
+        }
+        i++; // loop continues to the next question 
+    } 
+    // end of quiz 
+    printf("\n=====quiz results=====\n");
+    printf("You scored %d out of %d\n", score, total_questions);
+    //adding a highscore system using file handling 
+    FILE *f =fopen("highscore.txt", "r");
+    if (!f){
+        printf("Could not open the file!\n");
+        return;
+    }
+    int highscore = 0; // initialize 
+    fscanf(f, "%d", &highscore);
+    fclose(f);
+    // compare scores 
+    if (score>highscore){
+        printf("YAY! NEW HIGH SCORE!\n");
+        //write the updated score 
+        f = fopen("highscore.txt","w");
+        if (f){
+            fprintf(f,"%d",score);
+            fclose(f);
+        }
+    }
+    else{
+        printf("highscore is still:%d\n", highscore);
+    }
+    printf("\nReturning to main menu\n");
+}
