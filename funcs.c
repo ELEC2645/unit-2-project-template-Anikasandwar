@@ -7,8 +7,6 @@
 #define MAX_POINTS 30   // number of time steps
 #define GRAPH_HEIGHT 10 // rows in graph
 #define GRAPH_WIDTH 40  // columns in graph
-
-
 void menu_item_1(void){
     resistor_network_menu();
 }
@@ -24,7 +22,6 @@ void resistor_network_menu(void)
     printf("4. Back to Main Menu\n");
     printf("Select: ");
     scanf("%d", &choice);
-
     switch (choice) {
         case 1:
             calc_series();
@@ -50,12 +47,9 @@ void calc_series(void) {
         printf("Invalid number of resistors, returning to the main menu");
         return;
     }
-
     scanf("%d", &n);
-
     double resistors[n];    // creates an array to store resistor values
     double total = 0;
-
     for (int i = 0; i < n; i++) {  // loop through array until the value that the user specified is reached
         printf("Enter R%d (ohms): ", i + 1);
         scanf("%lf", &resistors[i]);
@@ -65,7 +59,6 @@ void calc_series(void) {
         }
         total += resistors[i];  // total series resistance 
     }
-
     printf("\nTotal series Resistance = %.3f ohms\n", total); // 3 decimal places 
 }
 // Parallel resistance calculation
@@ -79,10 +72,8 @@ void calc_parallel(void) {
         printf("Invalid number of resistors, returning to the main menu");
         return;
     }
-
     double resistors[n];   // array to store resistor values
     double inv_sum = 0;
-
     for (int i = 0; i < n; i++) { //for loop
         printf("Enter R%d (ohms): ", i + 1);
         scanf("%lf", &resistors[i]);
@@ -205,7 +196,6 @@ void calculate_voltage(void) {
     scanf("%lf", &I);
     printf("Enter Resistance (R in Ohms): ");
     scanf("%lf", &R);
-
     if (I < 0 || R < 0) {
         printf("Error values must be positive.\n");
         return;
