@@ -663,7 +663,6 @@ void RC_circuit(){
     while (fgets(line, sizeof(line), file)) {
         printf("%s", line);
     }
-
     fclose(file);
 }
 void Theorems(){
