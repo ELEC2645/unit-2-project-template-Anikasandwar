@@ -583,17 +583,17 @@ void voltage_to_dB(void) {
     double Vin = 0, Vout = 0; // initialize the values 
     while (Vin <= 0) { // check for error
         printf("Enter Vin: ");
-        if (Vin<=0){
-            printf("Error, check your values again");
-        }
         scanf("%lf", &Vin);
+        if (Vin <= 0) {
+            printf("Error, check your values again\n");
+        }
     }
     while (Vout <= 0) {
         printf("Enter Vout: ");
-        if (Vout<=0){
-            printf("Error,check the values again");
-        }
         scanf("%lf", &Vout);
+        if (Vout <= 0) {
+            printf("Error,check the values again\n");
+        }
     }
     // Calculate dB
     double dB = 20 * log10(Vout / Vin);
@@ -613,13 +613,14 @@ void Power_to_dB(void) {
     while (Pout <= 0) {
         printf("Enter Pout: ");
         scanf("%lf", &Pout);
-        if (Pout <= 0){
+        if (Pout <= 0) {
             printf("Error, check values\n");
         } 
     }
     double dB = 10 * log10(Pout / Pin);
     printf("Power ratio in dB: %.2f dB\n", dB);
 }
+
 void menu_item_5(void) { //Basic circuit theory help 
      Basic_circuit_theory();
 }
@@ -801,3 +802,4 @@ void Quiz(void){
     }
     printf("\nReturning to main menu\n");
 }
+//The final code. 
